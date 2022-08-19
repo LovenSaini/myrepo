@@ -21,4 +21,4 @@ document.getElementById("p1").innerHTML="ITs DONE!"
 else{alert("ALREADY DONE");}
 
 }
-alert("i thing itts done.");
+alert("i think its done.");
