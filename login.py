@@ -13,7 +13,7 @@ if ch==1:#EXISTING USER SIGN IN
     print("Enter Password:",end=" ")
     pw=input()
     f=open("data.txt","rt")
-    cu=user+" "+pw
+    cu=user+" "+pw              
     for x in f:
         if x==cu:
             print("ACCESS GRANTED")
