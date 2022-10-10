@@ -1,9 +1,16 @@
 import os
 def main():
-    f=open("data.txt")
-    for x in f:
-        print(x)
-    f.close()
+    print("Application here")
+def encrypt(a):
+    t=[]
+    for b in a:
+        t.append(str(ord(b)))
+    return t
+def decrypt(a):
+    t=""
+    for x in a:
+        t=t+chr(x)
+    return t
 print("HELLO USER!")
 print("Press 1 for Sign In OR press 2 for SIGN UP(New User):",end=" ")
 ch=int(input())
@@ -15,9 +22,14 @@ if ch==1:#EXISTING USER SIGN IN
     pw=input()
     f=open("data.txt","rt")
     fl=f.readlines()
-    cu="id:"+user+" "+"pw:"+pw+"\n"              
+    cu="id:"+user+" "+"pw:"+pw+"\n"
+    t=encrypt(cu)
+    c=""
+    for d in t:
+        c=c+d       
+    c=c+"\n"       
     for x in fl:
-        if x==cu:#check id and pw
+        if x==c:#check id and pw
             print("ACCESS GRANTED")
             main()
             call=True
@@ -41,8 +53,9 @@ elif ch==2: #NEW USER SIGN UP
             break
     if exisTs==False:
         f=open("data.txt","at")
-        f.write(cu)
+        f.writelines(encrypt(cu))
+        f.write("\n")
         f.close()
         print("Account successfuly created.")
 else:
-    print("Wrong Choice!")
+    print("Wrong Choice!")  
