@@ -6,7 +6,7 @@ def encrypt(a):
     for b in a:
         t.append(str(ord(b)))
     return t
-def decrypt(a):
+def decrypt(a):#not used anymore
     t=""
     for x in a:
         t=t+chr(x)
