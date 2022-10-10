@@ -46,8 +46,13 @@ elif ch==2: #NEW USER SIGN UP
     print("Enter Password:",end=" ")
     pw=input()
     cu="id:"+user+" "+"pw:"+pw+"\n"
+    t=encrypt(cu)
+    c=""
+    for d in t:
+        c=c+d       
+    c=c+"\n"
     for x in f:#in caSE user account exisTs
-        if x==cu:
+        if x==c:
             print("YOUR ACCOUNT ALREADY EXISTS!")
             exisTs=True
             break
